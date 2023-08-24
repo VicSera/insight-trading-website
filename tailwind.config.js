@@ -18,6 +18,7 @@ export default {
       'footerBg': '#054070',
       'footerText': '#FCFCFC',
       'footerSeparator': '#EFEFEF',
+      'test': '#666666'
     },
     fontFamily: {
       'sans': ['"DM Sans"', 'sans-serif'],
