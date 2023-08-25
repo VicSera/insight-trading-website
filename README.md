@@ -1,5 +1,7 @@
 # create-svelte
 
+[Figma](https://www.figma.com/file/RSkWIkVRkjlbKS7zDAZg1L/INSIGHT-TRADING-SITE?type=design&node-id=1-3&mode=design&t=TgLBUVOHw2TC9OHw-0)
+
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
 ## Creating a project
