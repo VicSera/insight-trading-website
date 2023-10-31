@@ -13,25 +13,30 @@
     <div class="font-[700] text-[40px] leading-[40px] tracking-[1px] text-textQuaternary uppercase mt-10">
         About us
     </div>
-    <div class="flex my-16">
-        <div class="w-[612px] h-[366px] overflow-hidden mask">
+    <div class="flex flex-col sm:flex-row my-8 sm:my-16 mx-4">
+        <div class="sm:w-[612px] sm:h-[366px] overflow-hidden mask">
             <img class="object-cover w-full h-full" src="/about-us/about-us-photo.png">
         </div>
         <div class="flex justify-center items-center
-                    w-[612px] ml-16
+                    mt-8
+                    sm:w-[612px] sm:ml-16 sm:mt-0
                     font-[400] text-textQuaternary text-[24px] leading-[31.25px]">
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+            We are players in the cardiology medical device industry, with a team of sales and support experts who bring together over 15 years of experience in the field.
+            <br/>Our mission is clear: we aim to bring high-quality products and services at affordable prices, offering our customers the latest therapeutic technologies in the industry.
         </div>
     </div>
 </div>
 
 <div class="mt-32">
-    <div class="text-textTernary capitalize font-[700] text-[56px] leading-[72.91px] text-center mt-16">
-        what our customers say
+    <div class="text-textTernary capitalize font-[700] mx-4
+                text-[32px] leading-[41.66px]
+                sm:text-[56px] sm:leading-[72.91px] sm:text-center mt-16">
+        <span class="inline-block">what our</span>
+        <span class="inline-block">customers say</span>
     </div>
-    <div class="flex justify-center items-center mt-4">
-        <div class="font-[400] text-[18.34px] leading-[32px] text-center w-[900px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+    <div class="flex justify-center items-center mt-4 mx-4">
+        <div class="font-[400] text-[18.34px] leading-[32px] sm:text-center w-[900px]">
+            We take pride in our close relationship with our customers, and we are delighted to share some of their words of appreciation.
         </div>
     </div>
     <Testimonials/>

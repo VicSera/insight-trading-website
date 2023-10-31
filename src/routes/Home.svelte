@@ -6,25 +6,27 @@ import Button from "$lib/Button.svelte";
 </script>
 
 <div class="relative h-[1050px] w-full overflow-hidden rounded-t-[80px]">
-    <img src="/cardiologist.png" class="w-full h-full object-cover object-center">
+    <img src="/hero.png" class="w-full h-full object-cover object-center">
     <div class="absolute top-[430px] left-0 right-0 h-[356px] flex justify-center">
-        <div class="w-[322px] md:w-[628px]
-                    h-full
+        <div class="w-[322px] md:w-[885px]
+                    
                     rounded-[16px] backdrop-blur
                     border-2 border-[rgba(255,255,255,0.4)]
-                    p-8
+                    p-6
                     flex flex-col items-center justify-between">
             <div class="text-textLight text-center font-[700]
                         text-[24px] leading-[24px]
-                        md:text-[80px] md:leading-[80px]">
-                Welcome text!
+                        sm:text-[80px] sm:leading-[80px]">
+                Welcome to INSIGHT!
             </div>
             <div class="text-textLight text-center font-[500]
-                        text-[16px] leading-[19px]
-                        md:text-[24px] md:leading-[28.5px]">
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint.
+                        text-[16px] leading-[19px]">
+                We are active participants in the cardiology medical device industry, boasting a team of sales and support experts with a combined experience of over 15 years in the field.
             </div>
-            <Button text="View products" />
+            <Button text="View products"
+                    onClick="{() => {
+                        window.location = '/products';
+                    }}"/>
         </div>
     </div>
 </div>

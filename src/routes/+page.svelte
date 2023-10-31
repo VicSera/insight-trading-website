@@ -6,7 +6,6 @@
     import Home from './Home.svelte';
 </script>
 
-<!--HOME-->
 <Home/>
 <Products/>
 <Services/>

@@ -1,7 +1,6 @@
 <script lang="ts">
-    import Step from "$lib/Carousel/Step.svelte";
-    import Connector from "$lib/Carousel/Connector.svelte";
-    import StepperPage from "$lib/Carousel/CarouselSlide.svelte";
+    import Step from '$lib/Carousel/Step.svelte';
+    import Connector from '$lib/Carousel/Connector.svelte';
     import CarouselSlide from '$lib/Carousel/CarouselSlide.svelte';
 
     export let activeStep = 0;
@@ -37,22 +36,25 @@
     <div class="grow overflow-hidden scroll-smooth w-full" bind:this={carousel}>
         <div class="flex">
             <CarouselSlide iconSrc="/carousel/space-dashboard-filled.svg"
-                         imgSrc="/carousel/doctor-in-suit.png"
-                         title="Our products"
-                         description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio."
-                         buttonText="view products"
+                           imgSrc="/carousel/doctor-in-suit.png"
+                           title="Our products"
+                           description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio."
+                           buttonText="view products"
+                           buttonAction="{() => {
+                               window.location = '/products';
+                           }}"
             />
             <CarouselSlide iconSrc="/carousel/volunteer_activism.svg"
-                         imgSrc="/carousel/laptop-statistics.png"
-                         title="Our services"
-                         description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio."
-                         buttonText="more"
+                           imgSrc="/carousel/laptop-statistics.png"
+                           title="Our services"
+                           description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio."
+                           buttonText="more"
             />
             <CarouselSlide iconSrc="/carousel/diversity_3.svg"
-                         imgSrc="/carousel/holding-hands.png"
-                         title="About us"
-                         description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio."
-                         buttonText="more"
+                           imgSrc="/carousel/holding-hands.png"
+                           title="About us"
+                           description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio."
+                           buttonText="more"
             />
         </div>
     </div>

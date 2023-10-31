@@ -6,6 +6,7 @@
     import MenuItem from '$lib/MenuItem.svelte';
 
     let y = 0;
+    const offsetValue = 100;
     let activeSection: PageSections;
     let scrollRefs: ScrollReferences = {};
     scrollReferences.subscribe(refs => {
@@ -13,14 +14,15 @@
     })
 
     $: {
-        let scrollWithOffset = y + 200;
+        let scrollWithOffset = y + offsetValue;
         if (!!scrollRefs.contact && scrollRefs.contact.offsetTop < scrollWithOffset) {
             activeSection = PageSections.Contact;
         } else if (!!scrollRefs.aboutUs && scrollRefs.aboutUs.offsetTop < scrollWithOffset) {
             activeSection = PageSections.AboutUs;
         } else if (!!scrollRefs.services && scrollRefs.services.offsetTop < scrollWithOffset) {
             activeSection = PageSections.Services;
-        } else if (!!scrollRefs.products && scrollRefs.products.offsetTop < scrollWithOffset) {
+        } else if (!!scrollRefs.products && scrollRefs.products.offsetTop < scrollWithOffset
+                   || window?.location?.pathname !== '/') {
             activeSection = PageSections.Products;
         } else {
             activeSection = PageSections.Home;
@@ -28,21 +30,24 @@
     }
 
     function onMenuItemClick(item: PageSections): void {
+        if (window.location.pathname !== '/') {
+            window.location = '/';
+        }
         switch (item) {
             case PageSections.Home:
                 window.scrollTo(0, 0);
                 return;
             case PageSections.Products:
-                window.scrollTo(0, scrollRefs.products?.offsetTop ?? 0);
+                window.scrollTo(0, scrollRefs.products?.offsetTop - offsetValue + 5 ?? 0);
                 return;
             case PageSections.Services:
-                window.scrollTo(0, scrollRefs.services?.offsetTop ?? 0);
+                window.scrollTo(0, scrollRefs.services?.offsetTop - offsetValue + 5 ?? 0);
                 return;
             case PageSections.AboutUs:
-                window.scrollTo(0, scrollRefs.aboutUs?.offsetTop ?? 0);
+                window.scrollTo(0, scrollRefs.aboutUs?.offsetTop - offsetValue + 5 ?? 0);
                 return;
             case PageSections.Contact:
-                window.scrollTo(0, scrollRefs.contact?.offsetTop ?? 0);
+                window.scrollTo(0, scrollRefs.contact?.offsetTop - offsetValue + 5 ?? 0);
                 return;
         }
     }
@@ -86,9 +91,9 @@
 
 <slot />
 
-<footer class="bg-footerBg text-footerText px-32">
-    <div class="flex justify-between pt-16 pb-8 border-b border-footerSeparator">
-        <div class="flex flex-col justify-center items-center">
+<footer class="bg-footerBg text-footerText px-4 sm:px-32">
+    <div class="flex flex-col sm:flex-row justify-between pt-16 pb-8 border-b border-footerSeparator">
+        <div class="flex flex-col sm:justify-center sm:items-center">
             <div class="h-[58px] w-auto rounded-[8px] overflow-hidden mb-8">
                 <img class="mr-auto object-contain h-full" src="/logo.png" alt="Insight Trading Logo">
             </div>
@@ -96,15 +101,15 @@
                 <strong>EN</strong>|RO
             </div>
         </div>
-        <div class="text-footerText w-[645px] pl-16">
+        <div class="text-footerText max-sm:mt-4 sm:w-[645px] sm:pl-16">
             <div class="font-[700] text-[16px] leading-[20px] mb-4">
                 About us
             </div>
             <div class="font-[400] text-[16px] leading-[20px]">
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+                We are players in the cardiology medical device industry, with a team of sales and support experts who bring together over 15 years of experience in the field.
             </div>
         </div>
-        <div>
+        <div class="max-sm:mt-4">
             <div class="mb-2">Contact</div>
             <div class="flex mb-2">
                 <img class="mr-6" src="/mail.svg">

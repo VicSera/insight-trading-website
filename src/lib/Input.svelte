@@ -3,7 +3,7 @@
     export let helperText = 'Helper text';
 </script>
 
-<div class="text-openSans">
+<div class="text-openSans my-2">
     <div class="font-[400] text-[12px] leading-[16.5px] text-disabled">{label}</div>
 
     <input class="border-b outline-none transition-all box-border h-[30px] w-full

@@ -2,15 +2,16 @@
     import Product from "$lib/Product.svelte";
     import Button from "$lib/Button.svelte";
     import {scrollReferences} from '$lib';
+    import {products} from '$lib/data/products';
 
-    let products;
+    let productsSection;
     $: scrollReferences.update(refs => {
-        refs.products = products;
+        refs.products = productsSection;
         return refs;
     })
 </script>
 
-<div bind:this={products} class="rounded-[32px] bg-lightBlue
+<div bind:this={productsSection} class="rounded-[32px] bg-lightBlue
             flex flex-col justify-evenly items-center
             px-6">
     <div class="uppercase font-[700]
@@ -20,16 +21,18 @@
         Our products
     </div>
     <div class="font-[400] text-[16px] leading-[19px] text-center md:w-[588px] mt-10 mb-10">
-        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-    </div>
+        We take pride in our range of cutting-edge products, designed to revolutionize the treatment and surgical interventions in cardiology.    </div>
     <div class="flex flex-col md:flex-row
                 justify-evenly items-center w-full">
-        <Product/>
-        <Product/>
-        <Product/>
+        {#each products.slice(0, 3) as product}
+            <Product product="{product}"/>
+        {/each}
     </div>
     <div class="mt-10 mb-16">
-        <Button text="View all products" />
+        <Button text="View all products"
+                onClick="{() => {
+                    window.location = '/products';
+                }}"/>
     </div>
 </div>
 

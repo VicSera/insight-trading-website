@@ -4,8 +4,10 @@
     export let profession = 'Doctor';
 </script>
 
-<div class="w-[580px] h-[305px] bg-lightBlue border-[3px] border-textTernary rounded-[42px]
-            flex flex-col items-center justify-center relative px-16 flex-shrink-0 mr-12">
+<div class="w-[335px] h-[364px] px-4
+            sm:w-[580px] sm:h-[305px] sm:px-16
+            bg-lightBlue border-[3px] border-textTernary rounded-[42px]
+            flex flex-col items-center justify-center relative flex-shrink-0 mr-12">
     <div class="flex-none absolute top-[-44px] w-[88px] h-[88px] rounded-full">
         <img src="/about-us/testimonial-pic.png">
     </div>

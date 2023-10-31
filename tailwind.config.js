@@ -8,9 +8,13 @@ export default {
       'textTernary': '#0773CA',
       'textQuaternary': '#666666',
       'textLight': '#FFFFFF',
+      'bgAlternative': '#FCFCFC',
       'red': '#DF3538',
       'blue': '#0171C3',
       'lightBlue': '#F0F7FF',
+      'productBlue': '#0128F2',
+      'productBlueSecondary': '#222A41',
+      'producerBlue': '#083078',
       'stepperActive': '#0072BF',
       'stepperInactive': '#485C68',
       'transparent': '#00000000',
@@ -26,7 +30,8 @@ export default {
     },
     extend: {
       boxShadow: {
-        'huge': '0px 26.786399841308594px 117.19049835205078px 0px #20248A0F'
+        'huge': '0px 26.786399841308594px 117.19049835205078px 0px #20248A0F',
+        'product': '0px 12px 24px 0px #0773CA24'
       },
     },
   },
