@@ -4,8 +4,8 @@ export interface Product {
     name: string;
     descriptionRo: string;
     descriptionEn: string;
-    categoryRo: string;
-    categoryEn: string;
+    categoryRo: string[];
+    categoryEn: string[];
     producerLink: string;
     brochureLink: string;
     imagePaths: string[];
@@ -19,8 +19,8 @@ export const products: Product[] = [
         name: 'Zero-Gravity®',
         descriptionRo: 'Sistem suspendat de protectie impotriva radiatiilor ionizante',
         descriptionEn: 'Suspended X-Ray radiation protection system',
-        categoryRo: 'echipamente protectie X-Ray',
-        categoryEn: 'X-Ray protection devices',
+        categoryRo: ['echipamente protectie X-Ray'],
+        categoryEn: ['X-Ray protection devices'],
         producerLink: 'https://www.tidiproducts.com',
         brochureLink: 'https://www.tidiproducts.com/product-listing/zero-gravity-drape-wrap',
         imagePaths: [
@@ -37,8 +37,8 @@ export const products: Product[] = [
         name: 'GLUBRAN®2',
         descriptionRo: 'Adeziv chirurgical sintetic, lichid embolizare vasculara',
         descriptionEn: 'Synthetic surgical glue, liquid embolization agent',
-        categoryRo: 'interventii vasculare periferice, chirurgie',
-        categoryEn: 'peripheral vascular interventions, surgery',
+        categoryRo: ['interventii vasculare periferice', 'chirurgie'],
+        categoryEn: ['peripheral vascular interventions', 'surgery'],
         producerLink: 'https://www.gemitaly.it/en/',
         brochureLink: 'https://www.gemitaly.it/en/products/glubran-2/',
         imagePaths: [
@@ -55,8 +55,8 @@ export const products: Product[] = [
         name: 'GLUBRAN®TISS 2',
         descriptionRo: 'Adeziv chirurgical sintetic',
         descriptionEn: 'Synthetic surgical glue',
-        categoryRo: 'chirurgie, trauma',
-        categoryEn: 'surgery, trauma',
+        categoryRo: ['chirurgie', 'trauma'],
+        categoryEn: ['surgery', 'trauma'],
         producerLink: 'https://www.gemitaly.it/en/',
         brochureLink: 'https://www.gemitaly.it/en/products/glubran-tiss-2/',
         imagePaths: [
@@ -70,8 +70,8 @@ export const products: Product[] = [
         name: 'GLUTACK®',
         descriptionRo: 'Sistem atraumatic de fixare a plasei, laparoscopic ',
         descriptionEn: 'Atraumatic laparoscopic mesh fixation system',
-        categoryRo: 'interventii laparoscopice',
-        categoryEn: 'laparoscopic interventions',
+        categoryRo: ['interventii laparoscopice'],
+        categoryEn: ['laparoscopic interventions'],
         producerLink: 'https://www.gemitaly.it/en/',
         brochureLink: 'https://www.gemitaly.it/en/products/glutack/',
         imagePaths: [
@@ -86,8 +86,8 @@ export const products: Product[] = [
         name: 'APLICATOARE ADEZIV CHIRURGICAL',
         descriptionRo: 'Dispozitive de aplicare a adezivului chirurgical GLUBRAN®2',
         descriptionEn: 'Application devices for Glubran®2',
-        categoryRo: 'interventii vasculare periferice, chirurgie',
-        categoryEn: 'peripheral vascular interventions, surgery',
+        categoryRo: ['interventii vasculare periferice', 'chirurgie'],
+        categoryEn: ['peripheral vascular interventions', 'surgery'],
         producerLink: 'https://www.gemitaly.it/en/',
         brochureLink: 'https://www.gemitaly.it/en/products/application-devices/',
         imagePaths: [
@@ -108,8 +108,8 @@ export const products: Product[] = [
         name: 'Inoue Ballon Catheter',
         descriptionRo: 'Cateter cu balon dilatare mitrala (PTMC)',
         descriptionEn: 'Balloon Catheter for PTMC (Percutaneous Transvenous Mitral Commissurotomy)',
-        categoryRo: 'interventii vasculare coronariene',
-        categoryEn: 'coronary vascular interventions',
+        categoryRo: ['interventii vasculare coronariene'],
+        categoryEn: ['coronary vascular interventions'],
         producerLink: 'https://www.toray-medical.com/en/products/index.html',
         brochureLink: 'https://www.toray-medical.com/en/products/medical/med_0010.html',
         imagePaths: [
@@ -125,8 +125,8 @@ export const products: Product[] = [
         name: 'Embosphere',
         descriptionRo: 'Particule sferice din trisacril gelatina, pentru embolizare vasculara',
         descriptionEn: 'Spherical embolization particles,  made with trisacryl gelatin, for vascular embolization',
-        categoryRo: 'interventii vasculare periferice',
-        categoryEn: 'peripheral vascular interventions',
+        categoryRo: ['interventii vasculare periferice'],
+        categoryEn: ['peripheral vascular interventions'],
         producerLink: 'https://www.merit.com/peripheral-intervention/embolotherapy/',
         brochureLink: 'https://www.merit.com/peripheral-intervention/embolotherapy/microspheres/embosphere-microspheres/',
         imagePaths: [
@@ -140,8 +140,8 @@ export const products: Product[] = [
         name: 'HepaSphere™',
         descriptionRo: 'Particule incarcabile, sferice, pentru chemoembolizare hepatica locala si embolizare vasculara',
         descriptionEn: 'Spherical loadable particles, for hepatic targeted chemoembolization and vessel occlusion',
-        categoryRo: 'interventii vasculare periferice',
-        categoryEn: 'peripheral vascular interventions',
+        categoryRo: ['interventii vasculare periferice'],
+        categoryEn: ['peripheral vascular interventions'],
         producerLink: 'https://www.merit.com/peripheral-intervention/embolotherapy/',
         brochureLink: 'https://www.merit.com/peripheral-intervention/embolotherapy/hepatic-oncology/hepasphere-microspheres/?_gl=1*1d2r9xg*_up*MQ..*_ga*NTQ0MTk4MDQuMTY5NTg4ODY0OQ..*_ga_P80XFRH9XF*MTY5NTg4ODY0Ny4xLjEuMTY5NTg4ODY1MC4wLjAuMA..',
         imagePaths: [
@@ -155,8 +155,8 @@ export const products: Product[] = [
         name: 'Bearing nsPVA®',
         descriptionRo: 'Fulgi din PVA (polivinil alcool) pentru embolizare vasculara',
         descriptionEn: 'nsPVA embolisation particles for vascular occlusion',
-        categoryRo: 'interventii vasculare periferice',
-        categoryEn: 'peripheral vascular interventions',
+        categoryRo: ['interventii vasculare periferice'],
+        categoryEn: ['peripheral vascular interventions'],
         producerLink: 'https://www.merit.com/peripheral-intervention/embolotherapy/',
         brochureLink: 'https://www.merit.com/peripheral-intervention/embolotherapy/embolization-particles/bearing-nspva-embolization-particles/?_gl=1*1d2r9xg*_up*MQ..*_ga*NTQ0MTk4MDQuMTY5NTg4ODY0OQ..*_ga_P80XFRH9XF*MTY5NTg4ODY0Ny4xLjEuMTY5NTg4ODY1MC4wLjAuMA..',
         imagePaths: [
@@ -170,8 +170,8 @@ export const products: Product[] = [
         name: 'EmboCube®',
         descriptionRo: 'Cuburi preformate din gelatina resorbabila pentru embolizarea tumorilor hipervasculare',
         descriptionEn: 'Gelatin foam uniformly cut for vascular embolization',
-        categoryRo: 'interventii vasculare periferice',
-        categoryEn: 'peripheral vascular interventions',
+        categoryRo: ['interventii vasculare periferice'],
+        categoryEn: ['peripheral vascular interventions'],
         producerLink: 'https://www.merit.com/peripheral-intervention/embolotherapy/',
         brochureLink: 'https://www.merit.com/peripheral-intervention/embolotherapy/embolization-gelatin/embocube-embolization-gelatin/?_gl=1*1d2r9xg*_up*MQ..*_ga*NTQ0MTk4MDQuMTY5NTg4ODY0OQ..*_ga_P80XFRH9XF*MTY5NTg4ODY0Ny4xLjEuMTY5NTg4ODY1MC4wLjAuMA..',
         imagePaths: [
@@ -185,8 +185,8 @@ export const products: Product[] = [
         name: 'ClariVein®',
         descriptionRo: 'Cateter de perfuzie pentru ocluzia venelor incompetente la pacientii cu reflux venos superficial, cu dublă acțiune – mecanică și chimică',
         descriptionEn: 'Specialty infusion catheter for the occlusion of incompetent veins in patients with superficial venous reflux',
-        categoryRo: 'interventii vasculare periferice',
-        categoryEn: 'peripheral vascular interventions',
+        categoryRo: ['interventii vasculare periferice'],
+        categoryEn: ['peripheral vascular interventions'],
         producerLink: 'https://clarivein.com/',
         brochureLink: 'https://clarivein.com/',
         imagePaths: [

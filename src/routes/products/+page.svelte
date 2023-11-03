@@ -1,8 +1,38 @@
-<script>
+<script lang="ts">
     import Product from "$lib/Product.svelte";
     import {products} from '$lib/data/products';
     import Tag from "$lib/Tag.svelte";
     import {english} from "$lib/language";
+    import {onMount} from "svelte";
+
+    let filteredProducts: Product[] = products;
+    const tags: {[id: string]: {tagEn: string; tagRo: string; active: boolean}} = {};
+    let values = [];
+    onMount(() => {
+        for (const product of products) {
+            for (let idx = 0; idx < product.categoryEn.length; idx++) {
+                if (tags[product.categoryEn[idx]]) continue;
+                tags[product.categoryEn[idx]] = {
+                    tagEn: product.categoryEn[idx],
+                    tagRo: product.categoryRo[idx],
+                    active: false
+                };
+            }
+        }
+
+        values = Object.values(tags);
+    })
+
+    function updateActive(tag: string, active: boolean): void {
+        tags[tag].active = active;
+
+        const activeTags = Object.values(tags).filter((tag) => tag.active).map((tag) => tag.tagEn);
+        if (activeTags.length === 0) {
+            filteredProducts = products;
+        } else {
+            filteredProducts = products.filter((product) => product.categoryEn.some((tag) => activeTags.includes(tag)))
+        }
+    }
 </script>
 
 <div class="mx-4 max-sm:mt-6 sm:mx-32 sm:mb-24">
@@ -28,15 +58,21 @@
         {/if}
     </div>
     <div class="mt-4 max-sm:mb-6">
-        <Tag text="Label"/>
-        <Tag active="true" text="Label 1"/>
-        <Tag text="Label 2"/>
+        {#if $english}
+            {#each values as tag}
+                <Tag text="{tag.tagEn}" active="{tag.active}" changed="{(active) => {updateActive(tag.tagEn, active)}}"/>
+            {/each}
+        {:else}
+            {#each values as tag}
+                <Tag text="{tag.tagRo}" active="{tag.active}" changed="{(active) => {updateActive(tag.tagEn, active)}}"/>
+            {/each}
+        {/if}
     </div>
 </div>
 
-<div class="flex flex-wrap justify-start items-stretch
-            ml-4 sm:ml-32 sm:mr-28">
-    {#each products as product}
+<div class="grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4
+            ml-4 md:ml-32 md:mr-28">
+    {#each filteredProducts as product}
         <Product product="{product}" flexibleSize="{true}"></Product>
     {/each}
 </div>

@@ -5,6 +5,7 @@
     import {PageSections} from '$lib/PageSections';
     import MenuItem from '$lib/MenuItem.svelte';
     import { english } from '$lib/language';
+    import { events } from '$lib/events';
 
     let y = 0;
     const offsetValue = 100;
@@ -39,7 +40,7 @@
                 window.scrollTo(0, 0);
                 return;
             case PageSections.Products:
-                window.scrollTo(0, scrollRefs.products?.offsetTop - offsetValue + 5 ?? 0);
+                window.location = '/products';
                 return;
             case PageSections.Services:
                 window.scrollTo(0, scrollRefs.services?.offsetTop - offsetValue + 5 ?? 0);
@@ -52,6 +53,14 @@
                 return;
         }
     }
+
+    events.subscribe((value) => {
+        if (value === 'services') {
+            window.scrollTo(0, scrollRefs.services?.offsetTop - offsetValue + 5 ?? 0);
+        } else if (value === 'aboutus') {
+            window.scrollTo(0, scrollRefs.aboutUs?.offsetTop - offsetValue + 5 ?? 0);
+        }
+    })
 </script>
 
 <svelte:window bind:scrollY={y} />

@@ -31,7 +31,8 @@ export default {
     extend: {
       boxShadow: {
         'huge': '0px 26.786399841308594px 117.19049835205078px 0px #20248A0F',
-        'product': '0px 12px 24px 0px #0773CA24'
+        'product': '0px 12px 24px 0px #0773CA24',
+        'button': '0px 1px 8px 0px #0000001F, 0px 3px 4px 0px #00000024, 0px 3px 3px -2px #00000033'
       },
     },
   },

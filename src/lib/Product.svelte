@@ -12,7 +12,7 @@
 <div class="flex flex-col {flexibleSize ? 'basis-[50%] sm:basis-[25%] pr-4 mb-8' : 'md:w-[400px]'} cursor-pointer"
      on:click="{onClick}">
     <div class="w-full
-                {flexibleSize ? 'rounded-[8px] grow' : 'h-[400px] sm:h-[542px] rounded-[32px]'}
+                {flexibleSize ? 'rounded-[8px] max-sm:grow h-[140px] sm:w-[294px] sm:h-[294px]' : 'h-[400px] sm:h-[542px] rounded-[32px]'}
                 overflow-hidden mb-6">
         <img src="{`/products/${product.imagePaths[0]}`}"
              alt="{product?.name}"

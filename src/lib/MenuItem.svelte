@@ -1,5 +1,7 @@
 <script lang="ts">
     import type {PageSections} from '$lib/PageSections';
+    import { english } from '$lib/language';
+    import { translate } from '$lib/PageSections';
 
     export let section: PageSections;
     export let activeSection: PageSections;
@@ -8,6 +10,10 @@
 
 <button class="px-[16px] flex flex-col items-center justify-center cursor-pointer"
      on:click={() => onClick(section)}>
-    {section.toString()}
+    {#if $english}
+        {section.toString()}
+    {:else}
+        {translate(section)}
+    {/if}
     <div class="rounded-full w-3 h-3 mt-1 {section === activeSection ? 'bg-textLight' : 'bg-transparent'}"></div>
 </button>

@@ -4,6 +4,7 @@ import Metric from "$lib/Metric.svelte";
 import Carousel from "$lib/Carousel/Carousel.svelte";
 import Button from "$lib/Button.svelte";
 import { english } from '$lib/language';
+import { events } from '$lib/events';
 </script>
 
 <div class="relative h-[1050px] w-full overflow-hidden rounded-t-[80px]">
@@ -86,6 +87,12 @@ import { english } from '$lib/language';
                 Ești curios sa afli ce putem face pentru tine?
             {/if}
         </div>
-        <Button text="our services" textRo="servicii" type="{ButtonType.WhiteTransparent}"/>
+        <Button text="our services"
+                textRo="servicii"
+                type="{ButtonType.WhiteTransparent}"
+                onClick="{() => {
+                   events.set('services');
+               }}"
+        />
     </div>
 </div>
