@@ -3,6 +3,7 @@
     import Button from "$lib/Button.svelte";
     import {scrollReferences} from '$lib';
     import {products} from '$lib/data/products';
+    import { english } from '$lib/language';
 
     let productsSection;
     $: scrollReferences.update(refs => {
@@ -18,10 +19,19 @@
                 text-[32px] leading-[32px]
                 md:text-[40px] md:leading-[40px]
                 mt-10">
-        Our products
+        {#if $english}
+            Our products
+        {:else}
+            PRODUSELE NOASTRE
+        {/if}
     </div>
     <div class="font-[400] text-[16px] leading-[19px] text-center md:w-[588px] mt-10 mb-10">
-        We take pride in our range of cutting-edge products, designed to revolutionize the treatment and surgical interventions in cardiology.    </div>
+        {#if $english}
+            We take pride in our range of cutting-edge products, designed to revolutionize the treatment and surgical interventions in cardiology.
+        {:else}
+            La <strong>INSIGHT</strong>, ne-am angajat să aducem soluții de top pentru îmbunătățirea sănătății cardiace și să ne asigurăm că pacienții și profesioniștii din domeniul medical au acces la cele mai bune dispozitive și echipamente. Iată câteva dintre produsele noastre de referință:
+        {/if}
+    </div>
     <div class="flex flex-col md:flex-row
                 justify-evenly items-center w-full">
         {#each products.slice(0, 3) as product}
@@ -30,6 +40,7 @@
     </div>
     <div class="mt-10 mb-16">
         <Button text="View all products"
+                textRo="Vezi produse"
                 onClick="{() => {
                     window.location = '/products';
                 }}"/>
@@ -44,7 +55,11 @@
                     text-[32px] leading-[32px]
                     md:text-[40px] md:leading-[40px]
                     flex justify-center items-center mb-[40px]">
-            Our partners
+            {#if $english}
+                Our partners
+            {:else}
+                Partenerii Noștri
+            {/if}
             <img class="ml-8" src="/sunrise-abstract.svg">
         </div>
         <div class="flex flex-col md:flex-row

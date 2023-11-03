@@ -16,7 +16,7 @@
                 overflow-hidden mb-6">
         <img src="{`/products/${product.imagePaths[0]}`}"
              alt="{product?.name}"
-             class="w-full h-full {flexibleSize ? 'object-contain' : 'object-contain'}"
+             class="w-full h-full {flexibleSize ? 'object-cover' : 'object-contain'}"
         >
     </div>
     <div class="font-[700] text-[16px] leading-[20.83px]">

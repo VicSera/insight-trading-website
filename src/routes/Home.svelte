@@ -3,6 +3,7 @@ import {ButtonType} from "$lib/ButtonType.js";
 import Metric from "$lib/Metric.svelte";
 import Carousel from "$lib/Carousel/Carousel.svelte";
 import Button from "$lib/Button.svelte";
+import { english } from '$lib/language';
 </script>
 
 <div class="relative h-[1050px] w-full overflow-hidden rounded-t-[80px]">
@@ -17,13 +18,22 @@ import Button from "$lib/Button.svelte";
             <div class="text-textLight text-center font-[700]
                         text-[24px] leading-[24px]
                         sm:text-[80px] sm:leading-[80px]">
-                Welcome to INSIGHT!
+                {#if $english}
+                    Welcome to INSIGHT!
+                {:else}
+                    Bun venit la INSIGHT!
+                {/if}
             </div>
             <div class="text-textLight text-center font-[500]
                         text-[16px] leading-[19px]">
-                We are active participants in the cardiology medical device industry, boasting a team of sales and support experts with a combined experience of over 15 years in the field.
+                {#if $english}
+                    We are active participants in the cardiology medical device industry, boasting a team of sales and support experts with a combined experience of over 15 years in the field
+                {:else}
+                    Suntem jucători în industria dispozitivelor medicale pentru cardiologie cu o echipă formată din experți în vânzări și suport ce adună peste 15 ani de experiență în domeniu.
+                {/if}
             </div>
             <Button text="View products"
+                    textRo="vezi produse"
                     onClick="{() => {
                         window.location = '/products';
                     }}"/>
@@ -36,15 +46,28 @@ import Button from "$lib/Button.svelte";
             p-12 md:p-0
             flex justify-evenly items-center
             flex-col md:flex-row shadow-huge">
-    <Metric value="99" unit="%" description="Customer<br>satisfaction" />
-    <Metric value="32" unit="K" description="Active users" />
-    <Metric value="20" unit="+" description="Team members" />
-    <Metric value="240" unit="%" description="Company growth" />
+    {#if $english}
+        <Metric value="99" unit="%" description="Customer<br>satisfaction" />
+        <Metric value="32" unit="K" description="Active users" />
+        <Metric value="20" unit="+" description="Team members" />
+        <Metric value="240" unit="%" description="Company growth" />
+    {:else}
+        <Metric value="99" unit="%" description="Clienți<br>satisfăcuți" />
+        <Metric value="32" unit="K" description="Utilizatori<br>activi" />
+        <Metric value="20" unit="+" description="Membri în<br>echipa noastră" />
+        <Metric value="240" unit="%" description="Creștere în<br>ultimii ani" />
+    {/if}
 </div>
 
 <div class="bg-lightBlue px-[30px] md:px-[96px] py-[32px] md:py-[40px]
             mt-[-2rem] rounded-[32px]">
-    <div class="text-center font-[700] text-[40px] leading-[40px] mb-8">Why choose us?</div>
+    <div class="text-center font-[700] text-[40px] leading-[40px] mb-8">
+        {#if $english}
+            Why choose us?
+        {:else}
+            De ce să ne alegi pe noi?
+        {/if}
+    </div>
     <Carousel/>
 </div>
 
@@ -57,8 +80,12 @@ import Button from "$lib/Button.svelte";
                     text-[48px] md:text-[72px]
                     leading-[53px] md:leading-[79.2px]
                     font-[500] text-center">
-            Curious about what we can do for you?
+            {#if $english}
+                Curious about what we can do for you?
+            {:else}
+                Ești curios sa afli ce putem face pentru tine?
+            {/if}
         </div>
-        <Button text="our services" type="{ButtonType.WhiteTransparent}"/>
+        <Button text="our services" textRo="servicii" type="{ButtonType.WhiteTransparent}"/>
     </div>
 </div>

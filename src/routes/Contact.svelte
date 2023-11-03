@@ -2,6 +2,7 @@
     import Input from "$lib/Input.svelte";
     import Button from "$lib/Button.svelte";
     import {scrollReferences} from "$lib";
+    import { english } from '$lib/language';
 
     let contact;
     $: scrollReferences.update(refs => {
@@ -19,12 +20,22 @@
                     sm:text-[56px] leading-[56px]
                     text-textLight sm:mb-8
                     max-sm:w-full">
-            Get in touch!
+            {#if $english}
+                Get in touch!
+            {:else}
+                Contactează-ne!
+            {/if}
         </div>
         <div class="font-[400] text-[16px] leading-[24px] text-textLight">
-            Thank you for your interest in contacting us. We value your feedback, questions, and comments, and we would be happy to hear from you.
-            <br><br>
-            To get in touch with us, please fill out the contact form below with your name, email address, and message, and we will get back to you as soon as possible.
+            {#if $english}
+                Thank you for your interest in contacting us. We value your feedback, questions, and comments, and we would be happy to hear from you.
+                <br><br>
+                To get in touch with us, please fill out the contact form below with your name, email address, and message, and we will get back to you as soon as possible.
+            {:else}
+                Vă mulțumim pentru interesul de a ne contacta. Apreciem feedback-ul, întrebările și comentariile dumneavoastră.
+                <br><br>
+                Pentru a intra în contact cu noi, vă rugăm să completați formularul de contact de mai jos cu numele, adresa de e-mail și mesajul dvs. și vă vom contacta cât mai curând posibil.
+            {/if}
         </div>
         <img class="sm:absolute sm:bottom-4 sm:right-6 sm:mt-0 mt-4" src="/contact/smile.svg">
     </div>

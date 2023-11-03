@@ -4,6 +4,7 @@
     import AboutUs from "./AboutUs.svelte";
     import Contact from "./Contact.svelte";
     import Home from './Home.svelte';
+    import { english } from '$lib/language';
 </script>
 
 <Home/>
@@ -19,7 +20,11 @@
         <img src="/arrow-big.svg">
         <img src="/arrow-small.svg">
     </div>
-    Scroll back up
+    {#if $english}
+        Scroll back up
+    {:else}
+        Înapoi sus
+    {/if}
 </div>
 
 <style lang="postcss">

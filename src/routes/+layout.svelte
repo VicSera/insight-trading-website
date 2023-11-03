@@ -4,6 +4,7 @@
     import type {ScrollReferences} from '$lib/ScrollReferences';
     import {PageSections} from '$lib/PageSections';
     import MenuItem from '$lib/MenuItem.svelte';
+    import { english } from '$lib/language';
 
     let y = 0;
     const offsetValue = 100;
@@ -71,7 +72,15 @@
     </div>
     <div class="text-right flex-1">
         <div class="ml-auto">
-            <strong>EN</strong>|RO
+            <span class="cursor-pointer {$english ? 'font-bold' : ''}"
+                on:click={() => english.set(true)}>
+                EN
+            </span>
+            |
+            <span class="cursor-pointer {$english ? '' : 'font-bold'}"
+                  on:click={() => english.set(false)}>
+                RO
+            </span>
         </div>
     </div>
 </nav>
@@ -98,15 +107,31 @@
                 <img class="mr-auto object-contain h-full" src="/logo.png" alt="Insight Trading Logo">
             </div>
             <div>
-                <strong>EN</strong>|RO
+                <span class="cursor-pointer {$english ? 'font-bold' : ''}"
+                      on:click={() => english.set(true)}>
+                    EN
+                </span>
+                |
+                <span class="cursor-pointer {$english ? '' : 'font-bold'}"
+                      on:click={() => english.set(false)}>
+                    RO
+                </span>
             </div>
         </div>
         <div class="text-footerText max-sm:mt-4 sm:w-[645px] sm:pl-16">
             <div class="font-[700] text-[16px] leading-[20px] mb-4">
-                About us
+                {#if $english}
+                    About us
+                {:else}
+                    Despre noi
+                {/if}
             </div>
             <div class="font-[400] text-[16px] leading-[20px]">
-                We are players in the cardiology medical device industry, with a team of sales and support experts who bring together over 15 years of experience in the field.
+                {#if $english}
+                    We are players in the cardiology medical device industry, with a team of sales and support experts who bring together over 15 years of experience in the field.
+                {:else}
+                    Suntem jucători în industria dispozitivelor medicale pentru cardiologie cu o echipă formată din experți în vânzări și suport ce adună peste 15 ani de experiență în domeniu.
+                {/if}
             </div>
         </div>
         <div class="max-sm:mt-4">
@@ -127,7 +152,19 @@
     </div>
 
     <div class="flex justify-between items-center mt-8 pb-12">
-        <div>Terms and conditions</div>
-        <div>Privacy policy</div>
+        <div>
+            {#if $english}
+                Terms and conditions
+            {:else}
+                Termeni și condiții
+            {/if}
+        </div>
+        <div>
+            {#if $english}
+                Privacy policy
+            {:else}
+                Politică de confidențialitate
+            {/if}
+        </div>
     </div>
 </footer>
