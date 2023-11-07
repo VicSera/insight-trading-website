@@ -22,6 +22,7 @@ export default {
       'footerBg': '#054070',
       'footerText': '#FCFCFC',
       'footerSeparator': '#EFEFEF',
+      'overlay': 'rgba(0,0,0,0.6)',
     },
     fontFamily: {
       'sans': ['"DM Sans"', 'sans-serif'],
