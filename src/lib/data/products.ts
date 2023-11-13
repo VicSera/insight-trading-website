@@ -9,6 +9,7 @@ export interface Product {
     producerLink: string;
     brochureLink: string;
     imagePaths: string[];
+    mainImage?: string;
 }
 
 export const products: Product[] = [
@@ -47,7 +48,8 @@ export const products: Product[] = [
             'Glubran2/Glubran2 0.25ml.jpg',
             'Glubran2/Glubran2 1ml.jpg',
             'Glubran2/glubran_2.png',
-        ]
+        ],
+        mainImage: 'Glubran2/main.png',
     },
     {
         id: 'glubran-tiss-2',
@@ -78,7 +80,8 @@ export const products: Product[] = [
             'Glutack/Glutack.jpg',
             'Glutack/Glutack2.jpg',
             'Glutack/Glutack3.jpg'
-        ]
+        ],
+        mainImage: 'Glutack/main.png',
     },
     {
         id: 'aplicatoare',
@@ -177,7 +180,8 @@ export const products: Product[] = [
         imagePaths: [
             'EmboCube/EmboCube.jpg',
             'EmboCube/EmboCube2.jpg',
-        ]
+        ],
+        mainImage: 'EmboCube/main.png',
     },
     {
         id: 'clarivein',

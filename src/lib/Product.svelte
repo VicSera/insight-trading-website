@@ -9,12 +9,13 @@
     }
 </script>
 
-<div class="flex flex-col {flexibleSize ? 'basis-[50%] sm:basis-[25%] pr-4 mb-8' : 'md:w-[400px]'} cursor-pointer"
+<div class="flex flex-col {flexibleSize ? 'basis-[50%] sm:basis-[25%] pr-4 mb-8' : 'w-[280px] sm:w-[400px]'} cursor-pointer"
      on:click="{onClick}">
     <div class="w-full
-                {flexibleSize ? 'rounded-[8px] max-sm:grow h-[140px] sm:w-[294px] sm:h-[294px]' : 'h-[400px] sm:h-[542px] rounded-[32px]'}
+                {flexibleSize ? 'rounded-[8px] max-sm:grow h-[140px] sm:w-[294px] sm:h-[294px]'
+                : 'h-[400px] sm:h-[542px] rounded-[32px] bg-textLight'}
                 overflow-hidden mb-6">
-        <img src="{`/products/${product.imagePaths[0]}`}"
+        <img src="{`/products/${product.mainImage ?? product.imagePaths[0]}`}"
              alt="{product?.name}"
              class="w-full h-full {flexibleSize ? 'object-cover' : 'object-contain'}"
         >

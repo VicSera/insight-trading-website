@@ -4,12 +4,23 @@
     import {scrollReferences} from '$lib';
     import {products} from '$lib/data/products';
     import { english } from '$lib/language';
+    import { onMount } from 'svelte';
 
     let productsSection;
+    let displayProducts = [];
     $: scrollReferences.update(refs => {
         refs.products = productsSection;
         return refs;
     })
+
+    onMount(() => {
+        displayProducts = products.filter((product) =>
+            product.id === 'glubran-2' ||
+            product.id === 'embocube' ||
+            product.id === 'glutack'
+        )
+    })
+
 </script>
 
 <div bind:this={productsSection} class="rounded-[32px] bg-lightBlue
@@ -34,7 +45,7 @@
     </div>
     <div class="flex flex-col md:flex-row
                 justify-evenly items-center w-full">
-        {#each products.slice(0, 3) as product}
+        {#each displayProducts as product}
             <Product product="{product}"/>
         {/each}
     </div>
