@@ -8,7 +8,9 @@
     export let onClick: (section: PageSections) => void;
 </script>
 
-<button class="px-[16px] flex flex-col items-center justify-center cursor-pointer"
+<button class="px-[16px] flex flex-col items-center justify-center
+               max-sm:text-[32px] max-sm:font-[500] max-sm:text-blue
+               cursor-pointer"
      on:click={() => onClick(section)}>
     {#if $english}
         {section.toString()}

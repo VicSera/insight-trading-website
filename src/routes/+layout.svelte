@@ -8,6 +8,8 @@
     import { events, overlayActive } from '$lib/events';
     import ImageViewer from '$lib/ImageViewer/ImageViewer.svelte';
 
+    let burgerMenuActive = false;
+
     let y = 0;
     const offsetValue = 100;
     let activeSection: PageSections;
@@ -96,16 +98,46 @@
         </div>
     </nav>
     <nav class="sm:hidden w-full">
-        <div class="flex justify-between">
+        <div class="flex justify-between items-center">
             <div class="h-[58px] w-auto">
                 <img class="mr-auto object-contain h-full" src="/logo.png" alt="Insight Trading Logo">
             </div>
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="12.75" y1="16.25" x2="34.29" y2="16.25" stroke="#141415" stroke-width="1.5" stroke-linecap="square"/>
-                <line x1="12.75" y1="23.25" x2="34.29" y2="23.25" stroke="#141415" stroke-width="1.5" stroke-linecap="square"/>
-                <line x1="12.75" y1="30.25" x2="34.29" y2="30.25" stroke="#141415" stroke-width="1.5" stroke-linecap="square"/>
-            </svg>
+            {#if !burgerMenuActive}
+                <svg on:click="{() => {burgerMenuActive = true}}"
+                     width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="12.75" y1="16.25" x2="34.29" y2="16.25" stroke="#141415" stroke-width="1.5" stroke-linecap="square"/>
+                    <line x1="12.75" y1="23.25" x2="34.29" y2="23.25" stroke="#141415" stroke-width="1.5" stroke-linecap="square"/>
+                    <line x1="12.75" y1="30.25" x2="34.29" y2="30.25" stroke="#141415" stroke-width="1.5" stroke-linecap="square"/>
+                </svg>
+            {:else}
+                <svg on:click="{() => {burgerMenuActive = false}}" class="mr-4"
+                     width="16" height="16" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#0171C3"/>
+                </svg>
+            {/if}
 
+        </div>
+        <div class="bg-textLight {burgerMenuActive ? '' : 'hidden'}">
+            <div class="flex flex-col my-16">
+                <MenuItem section="{PageSections.Home}" activeSection="{activeSection}" onClick="{onMenuItemClick}"/>
+                <MenuItem section="{PageSections.Products}" activeSection="{activeSection}" onClick="{onMenuItemClick}"/>
+                <MenuItem section="{PageSections.Services}" activeSection="{activeSection}" onClick="{onMenuItemClick}"/>
+                <MenuItem section="{PageSections.AboutUs}" activeSection="{activeSection}" onClick="{onMenuItemClick}"/>
+                <MenuItem section="{PageSections.Contact}" activeSection="{activeSection}" onClick="{onMenuItemClick}"/>
+            </div>
+            <div class="flex justify-center mb-16">
+                <div class="text-blue">
+                    <span class="cursor-pointer {$english ? 'font-bold' : ''}"
+                          on:click={() => english.set(true)}>
+                        EN
+                    </span>
+                        |
+                        <span class="cursor-pointer {$english ? '' : 'font-bold'}"
+                              on:click={() => english.set(false)}>
+                        RO
+                    </span>
+                </div>
+            </div>
         </div>
     </nav>
 
