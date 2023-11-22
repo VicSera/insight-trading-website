@@ -149,7 +149,7 @@ export const products: Product[] = [
         brochureLink: 'https://www.merit.com/peripheral-intervention/embolotherapy/hepatic-oncology/hepasphere-microspheres/?_gl=1*1d2r9xg*_up*MQ..*_ga*NTQ0MTk4MDQuMTY5NTg4ODY0OQ..*_ga_P80XFRH9XF*MTY5NTg4ODY0Ny4xLjEuMTY5NTg4ODY1MC4wLjAuMA..',
         imagePaths: [
             'Hepasphere/Hepasphere.jpg',
-            'Hepasphere/Hepashpere with Doxo.jpg',
+            'Hepasphere/HepasphereWithDoxo.jpg',
         ]
     },
     {

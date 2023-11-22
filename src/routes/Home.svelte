@@ -30,7 +30,7 @@ import { events } from '$lib/events';
                 {#if $english}
                     We are active participants in the cardiology medical device industry, boasting a team of sales and support experts with a combined experience of over 15 years in the field
                 {:else}
-                    Suntem jucători în industria dispozitivelor medicale pentru cardiologie cu o echipă formată din experți în vânzări și suport ce adună peste 15 ani de experiență în domeniu.
+                    Suntem participanți activi în industria dispozitivelor medicale pentru cardiologie cu o echipă formată din experți în vânzări și suport ce adună peste 15 ani de experiență în domeniu.
                 {/if}
             </div>
             <Button text="View products"

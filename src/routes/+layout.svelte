@@ -171,9 +171,9 @@
                 </div>
                 <div class="font-[400] text-[16px] leading-[20px]">
                     {#if $english}
-                        We are players in the cardiology medical device industry, with a team of sales and support experts who bring together over 15 years of experience in the field.
+                        We are active participants in the cardiology medical device industry, with a team of sales and support experts who bring together over 15 years of experience in the field.
                     {:else}
-                        Suntem jucători în industria dispozitivelor medicale pentru cardiologie cu o echipă formată din experți în vânzări și suport ce adună peste 15 ani de experiență în domeniu.
+                        Suntem participanți activi în industria dispozitivelor medicale pentru cardiologie cu o echipă formată din experți în vânzări și suport ce adună peste 15 ani de experiență în domeniu.
                     {/if}
                 </div>
             </div>

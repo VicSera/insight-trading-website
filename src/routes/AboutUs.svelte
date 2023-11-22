@@ -27,10 +27,10 @@
                     sm:w-[612px] sm:ml-16 sm:mt-0
                     font-[400] text-textQuaternary text-[24px] leading-[31.25px]">
             {#if $english}
-                We are players in the cardiology medical device industry, with a team of sales and support experts who bring together over 15 years of experience in the field.
+                We are active participants in the cardiology medical device industry, with a team of sales and support experts who bring together over 15 years of experience in the field.
                 <br/>Our mission is clear: we aim to bring high-quality products and services at affordable prices, offering our customers the latest therapeutic technologies in the industry.
             {:else}
-                Suntem jucători în industria dispozitivelor medicale pentru cardiologie cu o echipă formată din experți în vânzări și suport ce adună peste 15 ani de experiență în domeniu.
+                Suntem participanți activi în industria dispozitivelor medicale pentru cardiologie cu o echipă formată din experți în vânzări și suport ce adună peste 15 ani de experiență în domeniu.
                 <br/>Misiunea noastră este clară: vrem să aducem produse și servicii de înaltă calitate la prețuri accesibile, punând la dispoziția clienților noștri cele mai recente tehnologii terapeutice din domeniu.
             {/if}
         </div>
