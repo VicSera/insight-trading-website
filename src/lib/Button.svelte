@@ -5,11 +5,12 @@
     export let text: string;
     export let textRo: string;
     export let type: ButtonType = ButtonType.Red;
+    export let submit: boolean;
     export let onClick: () => void;
  </script>
 
 {#if type === ButtonType.Red}
-    <button on:click={onClick} class="rounded-full py-[8px] px-[16px]
+    <button type="{submit ? 'submit' : 'button'}" on:click={onClick} class="rounded-full py-[8px] px-[16px]
                    bg-red hover:bg-[#B83B39] active:bg-gradient-to-br from-[#DF3538] to-[#B83B39]
                    hover:shadow-button active:shadow-button
                    h-[48px]

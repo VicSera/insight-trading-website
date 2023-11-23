@@ -9,6 +9,25 @@
         refs.contact = contact;
         return refs;
     })
+
+    function handleSubmit(e): void {
+        // getting the action url
+        const ACTION_URL = e.target.action
+
+        // get the form fields data and convert it to URLSearchParams
+        const formData = new FormData(e.target)
+        const data = new URLSearchParams()
+        for (let field of formData) {
+            const [key, value] = field
+            data.append(key, value)
+        }
+
+        // check the form's method and send the fetch accordingly
+        fetch(ACTION_URL, {
+            method: 'POST',
+            body: data,
+        })
+    }
 </script>
 
 <div class="flex flex-col sm:flex-row justify-center items-center mt-44" bind:this={contact}>
@@ -39,15 +58,21 @@
         </div>
         <img class="sm:absolute sm:bottom-4 sm:right-6 sm:mt-0 mt-4" src="/contact/smile.svg">
     </div>
-    <div class="max-sm:rounded-b-[32px] sm:rounded-r-[32px]
+    <form method="POST"
+          on:submit|preventDefault={handleSubmit}
+          class="max-sm:rounded-b-[32px] sm:rounded-r-[32px]
                 max-sm:mx-4 w-[90%] px-4 pt-8
                 sm:w-[700px] sm:h-[416px] sm:px-16 py-4
                 flex flex-col justify-evenly shadow-huge">
-        <Input label="Name" helperText="Write your full name"/>
-        <Input label="Email address" helperText="Write a valid email address"/>
-        <Input label="Message" helperText="Drop us your message here"/>
-        <div class="flex justify-center items-center"><Button text="send now"/></div>
-    </div>
+        <Input name="name" label="Name" helperText="Write your full name"/>
+        <Input name="email" label="Email address" helperText="Write a valid email address"/>
+        <Input name="message" label="Message" helperText="Drop us your message here"/>
+        <div class="flex justify-center items-center">
+            <Button text="send now"
+                    submit="{true}"
+            />
+        </div>
+    </form>
 </div>
 
 <div class="flex justify-center items-center w-full bg-textLight z-50 mt-32">
