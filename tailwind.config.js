@@ -11,6 +11,7 @@ export default {
       'bgAlternative': '#FCFCFC',
       'red': '#DF3538',
       'blue': '#0171C3',
+      'green': '#00C48C',
       'lightBlue': '#F0F7FF',
       'productBlue': '#0128F2',
       'productBlueSecondary': '#222A41',

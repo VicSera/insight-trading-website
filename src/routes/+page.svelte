@@ -16,9 +16,9 @@
 <div class="flex flex-col justify-center items-center font-[400] text-[16px] mt-20 mb-20 cursor-pointer"
      on:click={() => window.scrollTo(0, 0)}>
     <div class="flex justify-center items-center">
-        <img src="/arrow-small.svg">
-        <img src="/arrow-big.svg">
-        <img src="/arrow-small.svg">
+        <img alt="arrow" src="/arrow-small.svg">
+        <img alt="arrow" src="/arrow-big.svg">
+        <img alt="arrow" src="/arrow-small.svg">
     </div>
     {#if $english}
         Scroll back up

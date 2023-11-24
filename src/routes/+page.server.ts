@@ -35,7 +35,9 @@ export const actions = {
         console.log(opts);
         try {
             await transporter.sendMail(opts);
+            return { success: true };
         } catch (e) {
+            return { success: false };
             console.log(e);
         }
     }
