@@ -13,11 +13,22 @@
             idx: idx
         })
     }
+
+    let idx = 0;
+    const mod = (a: number, b: number) => ((a % b) + b) % b;
+
+    function next(): void {
+        idx = mod(idx + 1, data.product.imagePaths.length);
+    }
+
+    function prev(): void {
+        idx = mod(idx - 1, data.product.imagePaths.length);
+    }
 </script>
 
 {#if !!data.product}
-    <div class="px-16 flex justify-center py-8 bg-bgAlternative">
-        <div class="w-[612px]">
+    <div class="flex flex-col sm:flex-row justify-center py-8 sm:px-16 bg-bgAlternative">
+        <div class="max-sm:hidden w-[612px]">
             <div class="w-[612px] rounded-[32px] overflow-hidden mb-6 shadow-product">
                 <img class="w-full h-full object-fill cursor-pointer"
                      src="{`/products/${data.product.imagePaths[0]}`}"
@@ -51,7 +62,35 @@
                 {/if}
             </div>
         </div>
-        <div class="flex flex-col gap-8 px-8 py-12 w-[600px]">
+        <div class="sm:hidden relative">
+            <div class="absolute left-0 top-0 bottom-0 flex items-center ml-2">
+                <div class="bg-textLight rounded-full">
+                    <div class="bg-blue mask w-[40px] h-[40px] cursor-pointer"
+                         on:click={() => {
+                        prev();
+                     }}>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full h-[300px] overflow-hidden mb-2 bg-textLight">
+                <img class="w-full h-full object-contain cursor-pointer"
+                     src="{`/products/${data.product.imagePaths[idx]}`}"
+                     alt="product">
+            </div>
+            <div class="absolute right-0 top-0 bottom-0 flex items-center mr-2 rotate-180">
+                <div class="bg-textLight rounded-full">
+                    <div class="bg-blue mask w-[40px] h-[40px] cursor-pointer"
+                         on:click={() => {
+                             next();
+                         }}>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-4 sm:gap-8
+                    px-4 py-8
+                    sm:px-8 sm:py-12 sm:w-[600px]">
             <div>
                 <div class="font-[700] text-[32px] leading-[42px]">
                     {data.product.name}
@@ -76,7 +115,7 @@
                     {data.product.descriptionRo}
                 {/if}
             </div>
-            <div>
+            <div class="max-sm:flex max-sm:justify-center">
                 <Button text="more details" onClick="{() => {
                     window.open(data.product.brochureLink, '_blank');
                 }}"/>
@@ -86,3 +125,11 @@
 {:else}
     <div class="text-center font-700 text-[40px] my-10">We can't find this product! :(</div>
 {/if}
+
+<style>
+    .mask {
+        mask-image: image(url("/arrow-left.png"));
+        -webkit-mask-image: url("/arrow-left.png");
+        mask-size: 40px 40px;
+    }
+</style>
