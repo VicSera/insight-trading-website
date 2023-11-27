@@ -44,7 +44,6 @@ export const products: Product[] = [
         brochureLink: 'https://www.gemitaly.it/en/products/glubran-2/',
         imagePaths: [
             'Glubran2/about-2.jpg',
-            'Glubran2/Glubran2 0.5ml.jpg',
             'Glubran2/Glubran2 0.25ml.jpg',
             'Glubran2/Glubran2 1ml.jpg',
             'Glubran2/glubran_2.png',
@@ -178,7 +177,6 @@ export const products: Product[] = [
         producerLink: 'https://www.merit.com/peripheral-intervention/embolotherapy/',
         brochureLink: 'https://www.merit.com/peripheral-intervention/embolotherapy/embolization-gelatin/embocube-embolization-gelatin/?_gl=1*1d2r9xg*_up*MQ..*_ga*NTQ0MTk4MDQuMTY5NTg4ODY0OQ..*_ga_P80XFRH9XF*MTY5NTg4ODY0Ny4xLjEuMTY5NTg4ODY1MC4wLjAuMA..',
         imagePaths: [
-            'EmboCube/EmboCube.jpg',
             'EmboCube/EmboCube2.jpg',
         ],
         mainImage: 'EmboCube/main.png',
