@@ -29,7 +29,7 @@
 </div>
 
 <div class="flex flex-col md:flex-row items-center justify-between">
-    <img src="/arrow-left.png" width="75" height="75"
+    <img src="/arrow-left.png" width="75" height="75" alt="left arrow"
          class="max-md:hidden cursor-pointer"
          on:click={() => {
             activeStep = mod(activeStep - 1, 3);
@@ -96,20 +96,20 @@
             {/if}
         </div>
     </div>
-    <img src="/arrow-left.png" width="75" height="75"
+    <img src="/arrow-left.png" width="75" height="75" alt="right arrow"
          class="max-md:hidden rotate-180 cursor-pointer"
          on:click={() => {
             activeStep = mod(activeStep + 1, 3);
             scrollToPage();
          }}>
     <div class="md:hidden flex justify-center items-center mt-16">
-        <img src="/arrow-left.png" width="54" height="54"
+        <img src="/arrow-left.png" width="54" height="54" alt="left arrow"
              class="cursor-pointer mr-16"
              on:click={() => {
             activeStep = mod(activeStep - 1, 3);
             scrollToPage();
          }}>
-        <img src="/arrow-left.png" width="54" height="54"
+        <img src="/arrow-left.png" width="54" height="54" alt="right arrow"
              class="rotate-180 cursor-pointer"
              on:click={() => {
             activeStep = mod(activeStep + 1, 3);

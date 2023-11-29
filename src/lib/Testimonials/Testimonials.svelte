@@ -20,8 +20,8 @@
 </div>
 
 <div class="flex justify-center items-center mt-8">
-    <img src="/arrow-left.png" width="54" height="54" class="cursor-pointer mr-8"
+    <img alt="left arrow" src="/arrow-left.png" width="54" height="54" class="cursor-pointer mr-8"
          on:click={() => {scroll(-383)}}>
-    <img src="/arrow-left.png" width="54" height="54" class="rotate-180 cursor-pointer"
+    <img alt="right arrow" src="/arrow-left.png" width="54" height="54" class="rotate-180 cursor-pointer"
          on:click={() => {scroll(383)}}>
 </div>

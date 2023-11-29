@@ -71,15 +71,15 @@
             {:else}
                 Partenerii Noștri
             {/if}
-            <img class="ml-8" src="/sunrise-abstract.svg">
+            <img class="ml-8" src="/sunrise-abstract.svg" alt="partners icon">
         </div>
         <div class="flex flex-col md:flex-row
                     justify-evenly items-center border-t border-textLight pt-[40px]">
-            <img src="/partners/logo1.svg">
-            <img src="/partners/logo_2.svg">
-            <img src="/partners/logo_3.svg">
-            <img src="/partners/logo_4.svg">
-            <img src="/partners/logo_5.svg">
+            <img src="/partners/logo1.svg" alt="news.com.au logo">
+            <img src="/partners/logo_2.svg" alt="Business Insider logo">
+            <img src="/partners/logo_3.svg" alt="Envato logo">
+            <img src="/partners/logo_4.svg" alt="Midweek logo">
+            <img src="/partners/logo_5.svg" alt="Wired logo">
         </div>
     </div>
 </div>

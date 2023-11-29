@@ -9,7 +9,7 @@
             bg-lightBlue border-[3px] border-textTernary rounded-[42px]
             flex flex-col items-center justify-center relative flex-shrink-0 mr-12">
     <div class="flex-none absolute top-[-44px] w-[88px] h-[88px] rounded-full">
-        <img src="/about-us/testimonial-pic.png">
+        <img src="/about-us/testimonial-pic.png" alt="testimonial person">
     </div>
     <div class="font-[400] text-[18px] leading-[26.2px] text-center text-textQuaternary mt-20">
         {text}

@@ -17,7 +17,7 @@
         <Button text="{buttonText}" onClick="{buttonAction}"></Button>
     </div>
     <div class="w-[612px] h-[542px]">
-        <img src="{imgSrc}" alt="Image">
+        <img src="{imgSrc}" alt="Carousel Slide">
     </div>
 </div>
 
@@ -26,7 +26,7 @@
     <div class="text-[48px] leading-[62.5px] font-[700] mt-6">{title}</div>
     <div class="text-[16px] leading-[19px] font-[400] text-center mt-6">{description}</div>
     <div class="w-full h-[300px] mt-4">
-        <img src="{imgSrc}" alt="Image">
+        <img src="{imgSrc}" alt="Carousel Slide">
     </div>
     <Button text="{buttonText}" onClick="{buttonAction}"></Button>
 </div>

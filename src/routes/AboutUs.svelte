@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Testimonials from "$lib/Testimonials/Testimonials.svelte";
+    // import Testimonials from "$lib/Testimonials/Testimonials.svelte";
     import {scrollReferences} from '$lib';
     import { english } from '$lib/language';
 
@@ -20,7 +20,7 @@
     </div>
     <div class="flex flex-col sm:flex-row my-8 sm:my-16 mx-4">
         <div class="sm:w-[612px] sm:h-[366px] overflow-hidden mask">
-            <img class="object-cover w-full h-full" src="/about-us/about-us-photo.png">
+            <img class="object-cover w-full h-full" src="/about-us/about-us-photo.png" alt="about us">
         </div>
         <div class="flex justify-center items-center
                     mt-8

@@ -36,32 +36,32 @@
 
     function onMenuItemClick(item: PageSections): void {
         if (window.location.pathname !== '/') {
-            window.location = '/';
+            window.location.href = '/';
         }
         switch (item) {
             case PageSections.Home:
                 window.scrollTo(0, 0);
                 return;
             case PageSections.Products:
-                window.location = '/products';
+                window.location.href = '/products';
                 return;
             case PageSections.Services:
-                window.scrollTo(0, scrollRefs.services?.offsetTop - offsetValue + 5 ?? 0);
+                window.scrollTo(0, scrollRefs?.services?.offsetTop - offsetValue + 5 ?? 0);
                 return;
             case PageSections.AboutUs:
-                window.scrollTo(0, scrollRefs.aboutUs?.offsetTop - offsetValue + 5 ?? 0);
+                window.scrollTo(0, scrollRefs?.aboutUs?.offsetTop - offsetValue + 5 ?? 0);
                 return;
             case PageSections.Contact:
-                window.scrollTo(0, scrollRefs.contact?.offsetTop - offsetValue + 5 ?? 0);
+                window.scrollTo(0, scrollRefs?.contact?.offsetTop - offsetValue + 5 ?? 0);
                 return;
         }
     }
 
     events.subscribe((value) => {
         if (value === 'services') {
-            window.scrollTo(0, scrollRefs.services?.offsetTop - offsetValue + 5 ?? 0);
+            window.scrollTo(0, scrollRefs?.services?.offsetTop - offsetValue + 5 ?? 0);
         } else if (value === 'aboutus') {
-            window.scrollTo(0, scrollRefs.aboutUs?.offsetTop - offsetValue + 5 ?? 0);
+            window.scrollTo(0, scrollRefs?.aboutUs?.offsetTop - offsetValue + 5 ?? 0);
         }
     })
 </script>
@@ -85,15 +85,15 @@
         </div>
         <div class="text-right flex-1">
             <div class="ml-auto">
-                <span class="cursor-pointer {$english ? 'font-bold' : ''}"
+                <button class="cursor-pointer {$english ? 'font-bold' : ''}"
                     on:click={() => english.set(true)}>
                     EN
-                </span>
+                </button>
                 |
-                <span class="cursor-pointer {$english ? '' : 'font-bold'}"
+                <button class="cursor-pointer {$english ? '' : 'font-bold'}"
                       on:click={() => english.set(false)}>
                     RO
-                </span>
+                </button>
             </div>
         </div>
     </nav>
@@ -103,17 +103,20 @@
                 <img class="mr-auto object-contain h-full" src="/logo.png" alt="Insight Trading Logo">
             </div>
             {#if !burgerMenuActive}
-                <svg on:click="{() => {burgerMenuActive = true}}"
-                     width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="12.75" y1="16.25" x2="34.29" y2="16.25" stroke="#141415" stroke-width="1.5" stroke-linecap="square"/>
-                    <line x1="12.75" y1="23.25" x2="34.29" y2="23.25" stroke="#141415" stroke-width="1.5" stroke-linecap="square"/>
-                    <line x1="12.75" y1="30.25" x2="34.29" y2="30.25" stroke="#141415" stroke-width="1.5" stroke-linecap="square"/>
-                </svg>
+                <button on:click="{() => {burgerMenuActive = true}}">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="12.75" y1="16.25" x2="34.29" y2="16.25" stroke="#141415" stroke-width="1.5" stroke-linecap="square"/>
+                        <line x1="12.75" y1="23.25" x2="34.29" y2="23.25" stroke="#141415" stroke-width="1.5" stroke-linecap="square"/>
+                        <line x1="12.75" y1="30.25" x2="34.29" y2="30.25" stroke="#141415" stroke-width="1.5" stroke-linecap="square"/>
+                    </svg>
+                </button>
             {:else}
-                <svg on:click="{() => {burgerMenuActive = false}}" class="mr-4"
-                     width="16" height="16" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#0171C3"/>
-                </svg>
+                <button on:click="{() => {burgerMenuActive = false}}">
+                    <svg class="mr-4"
+                         width="16" height="16" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#0171C3"/>
+                    </svg>
+                </button>
             {/if}
 
         </div>
@@ -127,15 +130,15 @@
             </div>
             <div class="flex justify-center mb-16">
                 <div class="text-blue">
-                    <span class="cursor-pointer {$english ? 'font-bold' : ''}"
+                    <button class="cursor-pointer {$english ? 'font-bold' : ''}"
                           on:click={() => english.set(true)}>
                         EN
-                    </span>
-                        |
-                        <span class="cursor-pointer {$english ? '' : 'font-bold'}"
-                              on:click={() => english.set(false)}>
+                    </button>
+                    |
+                    <button class="cursor-pointer {$english ? '' : 'font-bold'}"
+                          on:click={() => english.set(false)}>
                         RO
-                    </span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -150,15 +153,15 @@
                     <img class="mr-auto object-contain h-full" src="/logo.png" alt="Insight Trading Logo">
                 </div>
                 <div>
-                <span class="cursor-pointer {$english ? 'font-bold' : ''}"
-                      on:click={() => english.set(true)}>
-                    EN
-                </span>
+                    <button class="cursor-pointer {$english ? 'font-bold' : ''}"
+                          on:click={() => english.set(true)}>
+                        EN
+                    </button>
                     |
-                    <span class="cursor-pointer {$english ? '' : 'font-bold'}"
+                    <button class="cursor-pointer {$english ? '' : 'font-bold'}"
                           on:click={() => english.set(false)}>
-                    RO
-                </span>
+                        RO
+                    </button>
                 </div>
             </div>
             <div class="text-footerText max-sm:mt-4 sm:w-[645px] sm:pl-16">
@@ -180,19 +183,19 @@
             <div class="max-sm:mt-4">
                 <div class="mb-2">Contact</div>
                 <div class="flex mb-2">
-                    <img class="mr-6" src="/mail.svg">
+                    <img class="mr-6" src="/mail.svg" alt="mail icon">
                     <a href="mailto:office@insight-trading.ro" class="hover:underline">
                         office@insight-trading.ro
                     </a>
                 </div>
                 <div class="flex mb-2">
-                    <img class="mr-6" src="/call.svg">
+                    <img class="mr-6" src="/call.svg" alt="phone icon">
                     <a href="tel:+40721285085" class="hover:underline">
                         +40721285085
                     </a>
                 </div>
                 <div class="flex mb-2">
-                    <img class="mr-6" src="/address.svg">
+                    <img class="mr-6" src="/address.svg" alt="location icon">
                     Str. Vulturilor nr.56-58, Ap.23,<br>
                     Sector 3, Bucuresti, 030856
                 </div>

@@ -32,7 +32,7 @@
             flex justify-center items-center"
      on:click={() => overlayActive.set(false)}>
     <div class="w-[134]">
-        <div class="bg-stepperInactive mask w-[54px] h-[54px] cursor-pointer mr-10"
+        <div role="button" class="bg-stepperInactive mask w-[54px] h-[54px] cursor-pointer mr-10"
              on:click={(event) => {
                  prev();
                  event.stopPropagation();
@@ -51,7 +51,7 @@
         </div>
     </div>
     <div class="w-[134]">
-        <div class="bg-stepperInactive mask w-[54px] h-[54px] cursor-pointer ml-10 rotate-180"
+        <div role="button" class="bg-stepperInactive mask w-[54px] h-[54px] cursor-pointer ml-10 rotate-180"
              on:click={(event) => {
                  next();
                  event.stopPropagation();

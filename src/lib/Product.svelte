@@ -9,7 +9,7 @@
     }
 </script>
 
-<div class="flex flex-col {flexibleSize ? 'basis-[50%] sm:basis-[25%] pr-4 mb-8' : 'w-[280px] sm:w-[400px]'} cursor-pointer"
+<div role="listitem" class="flex flex-col {flexibleSize ? 'basis-[50%] sm:basis-[25%] pr-4 mb-8' : 'w-[280px] sm:w-[400px]'} cursor-pointer"
      on:click="{onClick}">
     <div class="w-full
                 {flexibleSize ? 'rounded-[8px] max-sm:grow h-[140px] sm:w-[294px] sm:h-[294px]'

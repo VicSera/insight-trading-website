@@ -8,7 +8,7 @@ import { events } from '$lib/events';
 </script>
 
 <div class="relative h-[1050px] w-full overflow-hidden rounded-t-[80px]">
-    <img src="/hero.png" class="w-full h-full object-cover object-center">
+    <img alt="welcome" src="/hero.png" class="w-full h-full object-cover object-center">
     <div class="absolute top-[430px] left-0 right-0 h-[356px] flex justify-center">
         <div class="w-[322px] md:w-[885px]
                     

@@ -19,7 +19,6 @@
             {text}
         {:else}
             {textRo}
-<!--            linear-gradient(135deg, #DF3538 0%, #B83B39 100%)-->
         {/if}
     </button>
 {:else if type === ButtonType.Black}
