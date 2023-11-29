@@ -37,29 +37,29 @@
     </div>
 </div>
 
-<div class="mt-32">
-    <div class="text-textTernary font-[700] mx-4
-                text-[32px] leading-[41.66px]
-                sm:text-[56px] sm:leading-[72.91px] sm:text-center mt-16">
+<!--<div class="mt-32">-->
+<!--    <div class="text-textTernary font-[700] mx-4-->
+<!--                text-[32px] leading-[41.66px]-->
+<!--                sm:text-[56px] sm:leading-[72.91px] sm:text-center mt-16">-->
 
-        {#if $english}
-            <span class="inline-block">What Our</span>
-            <span class="inline-block">Customers Say</span>
-        {:else}
-            Ce spun clienții noștri
-        {/if}
-    </div>
-    <div class="flex justify-center items-center mt-4 mx-4">
-        <div class="font-[400] text-[18.34px] leading-[32px] sm:text-center w-[900px]">
-            {#if $english}
-                We take pride in our close relationship with our customers, and we are delighted to share some of their words of appreciation.
-            {:else}
-                Ne mândrim cu relația noastră strânsă cu clienții noștri și suntem bucuroși să împărtășim câteva dintre cuvintele lor de apreciere.
-            {/if}
-        </div>
-    </div>
-    <Testimonials/>
-</div>
+<!--        {#if $english}-->
+<!--            <span class="inline-block">What Our</span>-->
+<!--            <span class="inline-block">Customers Say</span>-->
+<!--        {:else}-->
+<!--            Ce spun clienții noștri-->
+<!--        {/if}-->
+<!--    </div>-->
+<!--    <div class="flex justify-center items-center mt-4 mx-4">-->
+<!--        <div class="font-[400] text-[18.34px] leading-[32px] sm:text-center w-[900px]">-->
+<!--            {#if $english}-->
+<!--                We take pride in our close relationship with our customers, and we are delighted to share some of their words of appreciation.-->
+<!--            {:else}-->
+<!--                Ne mândrim cu relația noastră strânsă cu clienții noștri și suntem bucuroși să împărtășim câteva dintre cuvintele lor de apreciere.-->
+<!--            {/if}-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <Testimonials/>-->
+<!--</div>-->
 
 <style lang="postcss">
     .mask {
