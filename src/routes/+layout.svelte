@@ -181,29 +181,33 @@
                 <div class="mb-2">Contact</div>
                 <div class="flex mb-2">
                     <img class="mr-6" src="/mail.svg">
-                    office@insight-trading.ro
+                    <a href="mailto:office@insight-trading.ro" class="hover:underline">
+                        office@insight-trading.ro
+                    </a>
                 </div>
                 <div class="flex mb-2">
                     <img class="mr-6" src="/call.svg">
-                    +4 021 323 3049
+                    <a href="tel:+40721285085" class="hover:underline">
+                        +40721285085
+                    </a>
                 </div>
                 <div class="flex mb-2">
                     <img class="mr-6" src="/address.svg">
-                    Str. Dr. Maximilian Popper nr. 23, ap. 11,<br>
-                    Sector 3, Bucuresti
+                    Str. Vulturilor nr.56-58, Ap.23,<br>
+                    Sector 3, Bucuresti, 030856
                 </div>
             </div>
         </div>
 
         <div class="flex justify-between items-center mt-8 pb-12">
-            <a href="/Termeni%20si%20conditii%20Insight%20Trading%20SRL.pdf" target="_blank">
+            <a href="/Termeni%20si%20conditii%20Insight%20Trading%20SRL.pdf" target="_blank" class="hover:underline">
                 {#if $english}
                     Terms and conditions
                 {:else}
                     Termeni și condiții
                 {/if}
             </a>
-            <a href="/Privacy%20Policy%20Insight%20trading%20%5Bbilingv%5D%202023.pdf" target="_blank">
+            <a href="/Privacy%20Policy%20Insight%20trading%20%5Bbilingv%5D%202023.pdf" target="_blank" class="hover:underline">
                 {#if $english}
                     Privacy policy
                 {:else}
